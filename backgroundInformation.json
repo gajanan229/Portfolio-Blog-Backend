@@ -1,0 +1,137 @@
+{
+    "name": "Gajanan Vigneswaran",
+    "Summary": "Highly motivated second-year Computer Science student at Toronto Metropolitan University with a strong foundation in software development, AI, and machine learning. Experienced in research and industry projects, with expertise in Python, JavaScript, and full-stack web development. Passionate about problem-solving, teamwork, and leveraging technology to drive innovative solutions.",
+    "Programming Languages": ["Python", "Java", "C", "C++", "JavaScript", "HTML", "CSS", "SQL"],
+    "Frameworks/libraries": ["React.js", "Node.js", "Express.js", "TensorFlow", "Keras", "Scikit-Learn", "NumPy", "Pandas", "Jupyter Notebook"],
+    "Development Tools": ["Git", "GitHub", "Unix/Linux", "PostgreSQL", "Flask", "REST APIs"],
+    "Work Experience": [
+        {
+            "title": "Research Assistant",
+            "company": "",
+            "date range": "May 2024 - Aug 2024",
+            "location": "Toronto, ON",
+            "description": [
+                "Developed a deep learning model to improve multimodal medical image registration, a process that aligns medical images from different sources (e.g., MRI and CT scans) to reduce costs while improving diagnosis and treatment.",
+                "Awarded the Undergraduate Research Opportunities Award from the TMU Faculty of Science.",
+                "Conducted a literature review on deep learning techniques for image registration, analyzing 25+ research papers.",
+                "Designed and implemented a Siamese Network to learn an image similarity metric for more precise alignment.",
+                "Utilized a ResNet model pre-trained on medical images with transfer learning for feature extraction.",
+                "Presented project proposals to my professor and led knowledge transfer sessions for incoming master’s students.",
+                "Technologies: Python, TensorFlow, NumPy, matplotlib, Jupyter Notebook."
+            ]
+        },
+        {
+            "title": "Process Operator",
+            "company": "Estée Lauder",
+            "date range": "May 2022 - Aug 2022",
+            "location": "Markham, ON",
+            "description": [
+                "Ensured control and safety processes were met while reaching monthly production targets.",
+                "Improved assembly line process to increase line efficiency by 15%.",
+                "Maintained production flow and met operational targets by efficiently managing process controls.",
+                "Participated in safety audits and emergency response protocols to uphold workplace safety standards."
+            ]
+        },
+        {
+            "title": "Food Packer and Prepper",
+            "company": "Charley Ronick’s Pub and Restaurant",
+            "date range": "June 2022 - Aug 2022",
+            "location": "Whitby, ON",
+            "description": [
+                "Packed and prepared food for delivery services, and assisted wait staff with food delivery and order-taking during peak.",
+                "Operated efficiently in a high-pressure, fast-paced environment, balancing multiple tasks while upholding service quality standards.",
+                "Communicated effectively with kitchen and service staff to ensure accurate and timely order fulfillment.",
+                "Delivered exceptional customer service by proactively addressing special requests and ensuring order accuracy."
+            ]
+        }
+    ],
+    "Education": [
+        {
+            "institution": "Toronto Metropolitan University (formerly Ryerson University)",
+            "degree": "Bachelor of Science in Computer Science (BS)",
+            "GPA": "4.10/4.33",
+            "date range": "Sep 2023 - Apr 2027",
+            "Relevant Coursework": [
+                "Introduction to Computer Science in Python",
+                "Introduction to C, C++ and UNIX",
+                "Object-Oriented Programming in Java",
+                "Data Structures and Algorithms",
+                "Digital System Design with VHDL",
+                "Computer Architecture with Assembly",
+                "Probability and Statistics I with R",
+                "Linear Algebra",
+                "Calculus I-II", 
+                "Discrete Mathematics"
+            ]
+        },
+        {
+            "institution": "Toronto Metropolitan University (formerly Ryerson University)",
+            "degree": "Bachelor of Engineering in Computer Engineering (BEng) - Incomplete",
+            "date range": "Sep 2021 - Apr 2023 - incomplete"
+        }
+    ],
+    "Projects": [
+        {
+            "title": "Movie Rating and Recommendations Website",
+            "type": "ML / Web Dev",
+            "Programming languages/ Tech stack": ["Python", "Scikit-Learn", "Flask", "SQLite", "RESTful API", "HTML", "CSS", "Bootstrap"],
+            "description": "This Flask web app provides a personalized movie ranking and recommendation experience for users. With user authentication and an integrated movie data API, the platform allows users to rate movies and receive tailored recommendations powered by a content-based machine-learning model. The app features a structured SQL database managed with SQLAlchemy, ensuring efficient data storage and retrieval.",
+            "portfolio link": "http://localhost:5173/project/1",
+            "Github Link": "https://github.com/gajanan229/Movie-Recomender-Web"
+        },
+        {
+            "title": "Notes App with the PERN stack",
+            "type": "Full-Stack Web Development",
+            "Programming languages/ Tech stack": ["JavaScript", "PostgreSQL", "Express.js", "React", "Node.js", "Passport.js", "bcrypt", "Google OAuth", "HTML", "CSS"],
+            "description": "Built a full-stack notes application using the PERN stack. Implemented secure user authentication, structured a relational database, and ensured seamless communication between the React frontend and Express.js backend.",
+            "portfolio link": "http://localhost:5173/project/2",
+            "Github Link": "https://github.com/gajanan229/Web-Development-learning/tree/main/The%20keeper-app"
+        },
+        {
+            "title": "RESTful Blog API & Client with Authentication",
+            "type": "Full-Stack Web Development",
+            "Programming languages/ Tech stack": ["JavaScript", "Node.js", "Express", "PostgreSQL", "EJS", "Passport.js", "Axios", "HTML", "CSS"],
+            "description": "Developed a RESTful API with user authentication, enabling users to create, read, update, and delete blog posts via API calls. Integrated OAuth authentication and bcrypt-based password security.",
+            "portfolio link": "http://localhost:5173/project/3",
+            "Github Link": "https://github.com/gajanan229/Web-Development-learning/tree/main/The%20Blog%2BAPI" 
+        },
+        {
+            "title": "Digit Recognition App",
+            "type": "Machine Learning",
+            "Programming languages/ Tech stack": ["Python", "TensorFlow", "NumPy", "Tkinter"],
+            "description": "Trained a convolutional neural network on a dataset of 60,000 hand-written digits. Implemented a user-friendly GUI using Tkinter, allowing users to draw digits for recognition.",
+            "portfolio link": "http://localhost:5173/project/4",
+            "Github Link": "https://github.com/gajanan229/digit-recognition-app"
+        },
+        {
+            "title": "Bookstore Project",
+            "type": "Java / Desktop Application",
+            "Programming languages/ Tech stack": ["Java", "JavaFX", "NetBeans"],
+            "description": "We collaboratively built a user-friendly GUI for an online bookstore, featuring user profiles and efficient order management. Designed UML class and use case diagrams to outline system structure and user interactions.",
+            "portfolio link": "http://localhost:5173/project/5"
+        },
+        {
+            "title": "ASL Flashcard App",
+            "type": "Desktop Application",
+            "Programming languages/ Tech stack": ["Python", "selenium webdriver", "Tkinter"],
+            "description": "Developed a Flashcard application for learning American Sign Language (ASL) with dynamic word repetition based on user performance. Integrated Selenium for word lookups in ASL, enhancing learning with quick access to relevant resources.",
+            "portfolio link": "http://localhost:5173/project/6",
+            "Github Link": "https://github.com/gajanan229/ASL_dictionary_automation"
+        },
+        {
+            "title": "Image Watermarking Desktop App",
+            "type": "Desktop Application",
+            "Programming languages/ Tech stack": ["Python","Tkinter", "selenium webdriver"],
+            "description": "Developed a user-friendly graphical interface for adding and saving custom watermarks to images. Designed the app using object-oriented design principles to make the code modular, scalable, and easier to read.",
+            "portfolio link": "http://localhost:5173/project/7"
+        },
+        {
+            "title": "Family Travel Map Tracker",
+            "type": "Full-Stack Web Development",
+            "Programming languages/ Tech stack": ["JavaScript", "Node.js", "Express", "EJS", "PostgreSQL", "HTML", "CSS"],
+            "description": "Developed an interactive web application for tracking visited countries, allowing users to add family members and countries they've traveled to, resulting in a personalized and visual record of their travel history. Designed a dynamic UI with EJS templates, enabling country colors to update based on user for an engaging experience.",
+            "portfolio link": "http://localhost:5173/project/8",
+            "Github Link": "https://github.com/gajanan229/Web-Development-learning/tree/main/Section%2033%20Postgres/33.4%2BFamily%2BTravel%2BTracker/8.5%20Family%20Travel%20Tracker"
+        }
+    ]
+}
