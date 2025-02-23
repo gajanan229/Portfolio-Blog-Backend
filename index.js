@@ -383,15 +383,15 @@ app.patch("/api/projects/:id", isAuthenticatedAndAdmin, async (req, res) => {
         RETURNING *;
         `;
         const { rows } = await pool.query(updateQuery, [
-            name,
-            type,
-            image,
-            JSON.stringify(images),
-            complexity,
-            year,
-            languages,
-            description,
-            github,
+            updatedData.name,
+            updatedData.type,
+            updatedData.image,
+            JSON.stringify(updatedData.images),
+            updatedData.complexity,
+            updatedData.year,
+            updatedData.languages,
+            updatedData.description,
+            updatedData.github,
             id,
         ]);
 
