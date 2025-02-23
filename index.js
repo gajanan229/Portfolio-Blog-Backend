@@ -13,6 +13,7 @@ import nodemailer from "nodemailer";
 env.config();
 
 const app = express();
+app.set('trust proxy', 1); // Trust first proxy
 const port = 5000;
 
 const allowedOrigins = [
@@ -24,15 +25,21 @@ const allowedOrigins = [
 app.use(cors({
     origin: allowedOrigins,
     credentials: true,
+    exposedHeaders: ['set-cookie'],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 app.use(express.json());
 app.use(session({
-    secret: process.env.SESSION_SECRET || 'yourSecret', // set in .env ideally
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
+    cookie: {
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
+        maxAge: 7 * 24 * 60 * 60 * 1000 // 1 week
+    }
 }));
 
 app.use(passport.initialize());
