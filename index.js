@@ -399,9 +399,13 @@ app.patch("/api/projects/:id", isAuthenticatedAndAdmin, async (req, res) => {
             return res.status(404).json({ message: "Project not found" });
         }
 
+        res.json(rows[0]);
+        res.end(); 
+
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: "Server error" });
+        res.end();
     }
 });
 
