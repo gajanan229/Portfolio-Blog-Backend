@@ -341,22 +341,35 @@ app.post("/api/projects", isAuthenticatedAndAdmin, async (req, res) => {
 
 app.patch("/api/projects/:id", isAuthenticatedAndAdmin, async (req, res) => {
     const { id } = req.params;
-    const {
-        name,
-        type,
-        image,
-        images,
-        complexity,
-        year,
-        languages,
-        description,
-        github,
-    } = req.body;
-    
+
     try {
+        const existingProject = await pool.query(
+          'SELECT * FROM projects WHERE id = $1', 
+            [id]
+        );
+        
+        if (existingProject.rows.length === 0) {
+            return res.status(404).json({ message: "Project not found" });
+        }
+    
+        const currentData = existingProject.rows[0];
+
+        // Merge existing data with new data
+        const updatedData = {
+            name: req.body.name || currentData.name,
+            type: req.body.type || currentData.type,
+            image: req.body.image || currentData.image,
+            images: req.body.images || currentData.images,
+            complexity: req.body.complexity || currentData.rank,
+            year: req.body.year || currentData.year,
+            languages: req.body.languages || currentData.languages,
+            description: req.body.description || currentData.description,
+            github: req.body.github || currentData.github,
+        };
+
         const updateQuery = `
-            UPDATE projects
-            SET
+        UPDATE projects
+        SET
             name = $1,
             type = $2,
             image = $3,
@@ -366,8 +379,8 @@ app.patch("/api/projects/:id", isAuthenticatedAndAdmin, async (req, res) => {
             languages = $7,
             description = $8,
             github = $9
-            WHERE id = $10
-            RETURNING *;
+        WHERE id = $10
+        RETURNING *;
         `;
         const { rows } = await pool.query(updateQuery, [
             name,
@@ -381,11 +394,11 @@ app.patch("/api/projects/:id", isAuthenticatedAndAdmin, async (req, res) => {
             github,
             id,
         ]);
-    
+
         if (rows.length === 0) {
             return res.status(404).json({ message: "Project not found" });
         }
-        res.json(rows[0]);
+
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: "Server error" });
