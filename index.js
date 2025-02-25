@@ -215,13 +215,13 @@ app.post(`/chat/list`, async (req, res) => {
 
 // Create a nodemailer transporter using SMTP
 const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST, // e.g., "smtp.gmail.com"
-    port: process.env.SMTP_PORT, // e.g., 587
-    secure: process.env.SMTP_SECURE === "true", // true for 465, false for other ports
+    host: 'smtp.sendgrid.net',
+    port: 587,
+    secure: false, // true for 465
     auth: {
-      user: process.env.SMTP_USER, // your email address
-      pass: process.env.SMTP_PASS, // your email password or app-specific password
-    },
+        user: 'apikey', // literal string
+        pass: process.env.SENDGRID_API_KEY
+    }
 });
 
 // Verify connection configuration
@@ -243,7 +243,7 @@ app.post("/api/contact", async (req, res) => {
     }
 
     const mailOptions = {
-        from: `"Website Contact" <${process.env.SMTP_USER}>`, // sender address
+        from: process.env.SMTP_USER, // sender address
         to: process.env.CONTACT_EMAIL, // your email address where you receive messages
         subject: `New Contact Message from ${name}`,
         text: `
@@ -251,23 +251,19 @@ app.post("/api/contact", async (req, res) => {
             Email: ${email}
             Message: ${message}
         `,
-        // Optionally, you can add an HTML body:
-        html: `
-            <h2>New Contact Message</h2>
-            <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Message:</strong></p>
-            <p>${message}</p>
-        `,
     };
 
     try {
-        await transporter.sendMail(mailOptions);
+        const info = await transporter.sendMail(mailOptions);
+        console.log('Message sent: %s', info.messageId);
         res.json({ message: "Email sent successfully" });
     } catch (error) {
-        console.error("Error sending email:", error);
-        res.status(500).json({ error: "Error sending email" });
-        }
+        console.error('Full error:', error);
+        res.status(500).json({ 
+            error: "Error sending email",
+            details: error.response?.body 
+        });
+    }
 });
 
 
@@ -285,7 +281,7 @@ app.get('/api/projects', async (req, res) => {
     }
 });
 
-// Optional: A route to get a single project by id
+// API route to get a single project by id
 app.get('/api/projects/:id', async (req, res) => {
     try {
         const queryText = 'SELECT * FROM projects WHERE id = $1';
