@@ -18,7 +18,8 @@ const port = 5000;
 
 const allowedOrigins = [
     'http://localhost:5173', // Local development
-    'https://portfolio-blog-frontend.vercel.app', // Your Vercel deployment
+    'https://portfolio-blog-frontend.vercel.app', // Vercel deployment
+    'https://portfolio-blog-frontend-git-main-gajanans-projects-38fbb10a.vercel.app/', // Vercel deployment
     'https://www.gajanan.live/', // Your custom domain
     'https://gajanan.live/', // Your custom domain
     'https://www.gajanan.live', // Your custom domain
